@@ -85,7 +85,7 @@
   --muted-foreground: #5f574d;
 
   --accent: var(--dm-yellow);
-  --accent-foreground: #2f2613;
+  --accent-foreground: var(--dm-ink);
 
   --destructive: var(--dm-red);
   --destructive-foreground: #ffffff;
