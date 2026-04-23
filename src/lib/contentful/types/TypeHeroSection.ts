@@ -1,4 +1,5 @@
 import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
+import type { TypeCtaLinkButtonSkeleton } from "./TypeCtaLinkButton";
 
 /**
  * Fields type definition for content type 'TypeHeroSection'
@@ -13,6 +14,25 @@ export interface TypeHeroSectionFields {
      * @localized true
      */
     title: EntryFieldTypes.Symbol;
+    /**
+     * Field type definition for field 'bodyText' (Body text)
+     * @name Body text
+     * @localized false
+     */
+    bodyText: EntryFieldTypes.Text;
+    /**
+     * Field type definition for field 'image' (Image)
+     * @name Image
+     * @localized false
+     * @summary Hero image. Add one to conditionally render it.
+     */
+    image?: EntryFieldTypes.AssetLink;
+    /**
+     * Field type definition for field 'ctAs' (CTAs)
+     * @name CTAs
+     * @localized false
+     */
+    ctAs?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeCtaLinkButtonSkeleton>>;
 }
 
 /**
@@ -21,7 +41,7 @@ export interface TypeHeroSectionFields {
  * @type {TypeHeroSectionSkeleton}
  * @author 0332BmLPoPiPSpIrDm3TIB
  * @since 2026-04-22T01:18:17.672Z
- * @version 3
+ * @version 11
  */
 export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, "heroSection">;
 /**
@@ -30,7 +50,7 @@ export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, "
  * @type {TypeHeroSection}
  * @author 0332BmLPoPiPSpIrDm3TIB
  * @since 2026-04-22T01:18:17.672Z
- * @version 3
+ * @version 11
  */
 export type TypeHeroSection<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeHeroSectionSkeleton, Modifiers, Locales>;
 

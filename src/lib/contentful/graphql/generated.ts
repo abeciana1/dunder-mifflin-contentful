@@ -186,6 +186,8 @@ export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
   entryCursorCollection?: Maybe<EntryCursorCollection>;
+  heroSectionCollection?: Maybe<HeroSectionCollection>;
+  heroSectionCursorCollection?: Maybe<HeroSectionCursorCollection>;
   seoMetaCollection?: Maybe<SeoMetaCollection>;
   seoMetaCursorCollection?: Maybe<SeoMetaCursorCollection>;
 };
@@ -201,6 +203,25 @@ export type AssetLinkingCollectionsEntryCollectionArgs = {
 
 
 export type AssetLinkingCollectionsEntryCursorCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  pageNext?: InputMaybe<Scalars['String']['input']>;
+  pagePrev?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type AssetLinkingCollectionsHeroSectionCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type AssetLinkingCollectionsHeroSectionCursorCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   pageNext?: InputMaybe<Scalars['String']['input']>;
@@ -293,6 +314,175 @@ export type ContentfulTag = {
   name?: Maybe<Scalars['String']['output']>;
 };
 
+/** [See type definition](https://app.contentful.com/spaces/tqmyba6imd8q/content_types/ctaLinkButton) */
+export type CtaLinkButton = Entry & _Node & {
+  __typename?: 'CtaLinkButton';
+  _id: Scalars['ID']['output'];
+  arrow?: Maybe<Scalars['Boolean']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  lable?: Maybe<Scalars['String']['output']>;
+  link?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<CtaLinkButtonLinkingCollections>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/tqmyba6imd8q/content_types/ctaLinkButton) */
+export type CtaLinkButtonArrowArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/tqmyba6imd8q/content_types/ctaLinkButton) */
+export type CtaLinkButtonLableArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/tqmyba6imd8q/content_types/ctaLinkButton) */
+export type CtaLinkButtonLinkArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/tqmyba6imd8q/content_types/ctaLinkButton) */
+export type CtaLinkButtonLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type CtaLinkButtonCollection = {
+  __typename?: 'CtaLinkButtonCollection';
+  items: Array<Maybe<CtaLinkButton>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type CtaLinkButtonCursorCollection = {
+  __typename?: 'CtaLinkButtonCursorCollection';
+  items: Array<Maybe<CtaLinkButton>>;
+  limit: Scalars['Int']['output'];
+  pages: CursorPages;
+};
+
+export type CtaLinkButtonFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CtaLinkButtonFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CtaLinkButtonFilter>>>;
+  arrow?: InputMaybe<Scalars['Boolean']['input']>;
+  arrow_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  arrow_not?: InputMaybe<Scalars['Boolean']['input']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  lable?: InputMaybe<Scalars['String']['input']>;
+  lable_contains?: InputMaybe<Scalars['String']['input']>;
+  lable_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  lable_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  lable_not?: InputMaybe<Scalars['String']['input']>;
+  lable_not_contains?: InputMaybe<Scalars['String']['input']>;
+  lable_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  link?: InputMaybe<Scalars['String']['input']>;
+  link_contains?: InputMaybe<Scalars['String']['input']>;
+  link_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  link_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  link_not?: InputMaybe<Scalars['String']['input']>;
+  link_not_contains?: InputMaybe<Scalars['String']['input']>;
+  link_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type CtaLinkButtonLinkingCollections = {
+  __typename?: 'CtaLinkButtonLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  entryCursorCollection?: Maybe<EntryCursorCollection>;
+  heroSectionCollection?: Maybe<HeroSectionCollection>;
+  heroSectionCursorCollection?: Maybe<HeroSectionCursorCollection>;
+};
+
+
+export type CtaLinkButtonLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type CtaLinkButtonLinkingCollectionsEntryCursorCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  pageNext?: InputMaybe<Scalars['String']['input']>;
+  pagePrev?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type CtaLinkButtonLinkingCollectionsHeroSectionCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<CtaLinkButtonLinkingCollectionsHeroSectionCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type CtaLinkButtonLinkingCollectionsHeroSectionCursorCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<CtaLinkButtonLinkingCollectionsHeroSectionCursorCollectionOrder>>>;
+  pageNext?: InputMaybe<Scalars['String']['input']>;
+  pagePrev?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export enum CtaLinkButtonLinkingCollectionsHeroSectionCollectionOrder {
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export enum CtaLinkButtonLinkingCollectionsHeroSectionCursorCollectionOrder {
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export enum CtaLinkButtonOrder {
+  ArrowAsc = 'arrow_ASC',
+  ArrowDesc = 'arrow_DESC',
+  LableAsc = 'lable_ASC',
+  LableDesc = 'lable_DESC',
+  LinkAsc = 'link_ASC',
+  LinkDesc = 'link_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 export type CursorPages = {
   __typename?: 'CursorPages';
   next?: Maybe<Scalars['String']['output']>;
@@ -341,10 +531,54 @@ export enum EntryOrder {
 export type HeroSection = Entry & _Node & {
   __typename?: 'HeroSection';
   _id: Scalars['ID']['output'];
+  bodyText?: Maybe<Scalars['String']['output']>;
   contentfulMetadata: ContentfulMetadata;
+  ctAsCollection?: Maybe<HeroSectionCtAsCollection>;
+  ctAsCursorCollection?: Maybe<HeroSectionCtAsCursorCollection>;
+  image?: Maybe<Asset>;
   linkedFrom?: Maybe<HeroSectionLinkingCollections>;
   sys: Sys;
   title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/tqmyba6imd8q/content_types/heroSection) */
+export type HeroSectionBodyTextArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/tqmyba6imd8q/content_types/heroSection) */
+export type HeroSectionCtAsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<HeroSectionCtAsCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<CtaLinkButtonFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/tqmyba6imd8q/content_types/heroSection) */
+export type HeroSectionCtAsCursorCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<HeroSectionCtAsCursorCollectionOrder>>>;
+  pageNext?: InputMaybe<Scalars['String']['input']>;
+  pagePrev?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<CtaLinkButtonFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/tqmyba6imd8q/content_types/heroSection) */
+export type HeroSectionImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -368,6 +602,55 @@ export type HeroSectionCollection = {
   total: Scalars['Int']['output'];
 };
 
+export type HeroSectionCtAsCollection = {
+  __typename?: 'HeroSectionCtAsCollection';
+  items: Array<Maybe<CtaLinkButton>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export enum HeroSectionCtAsCollectionOrder {
+  ArrowAsc = 'arrow_ASC',
+  ArrowDesc = 'arrow_DESC',
+  LableAsc = 'lable_ASC',
+  LableDesc = 'lable_DESC',
+  LinkAsc = 'link_ASC',
+  LinkDesc = 'link_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export type HeroSectionCtAsCursorCollection = {
+  __typename?: 'HeroSectionCtAsCursorCollection';
+  items: Array<Maybe<CtaLinkButton>>;
+  limit: Scalars['Int']['output'];
+  pages: CursorPages;
+};
+
+export enum HeroSectionCtAsCursorCollectionOrder {
+  ArrowAsc = 'arrow_ASC',
+  ArrowDesc = 'arrow_DESC',
+  LableAsc = 'lable_ASC',
+  LableDesc = 'lable_DESC',
+  LinkAsc = 'link_ASC',
+  LinkDesc = 'link_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 export type HeroSectionCursorCollection = {
   __typename?: 'HeroSectionCursorCollection';
   items: Array<Maybe<HeroSection>>;
@@ -378,7 +661,17 @@ export type HeroSectionCursorCollection = {
 export type HeroSectionFilter = {
   AND?: InputMaybe<Array<InputMaybe<HeroSectionFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<HeroSectionFilter>>>;
+  bodyText?: InputMaybe<Scalars['String']['input']>;
+  bodyText_contains?: InputMaybe<Scalars['String']['input']>;
+  bodyText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  bodyText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  bodyText_not?: InputMaybe<Scalars['String']['input']>;
+  bodyText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  bodyText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  ctAs?: InputMaybe<CfCtaLinkButtonNestedFilter>;
+  ctAsCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  image_exists?: InputMaybe<Scalars['Boolean']['input']>;
   sys?: InputMaybe<SysFilter>;
   title?: InputMaybe<Scalars['String']['input']>;
   title_contains?: InputMaybe<Scalars['String']['input']>;
@@ -751,6 +1044,9 @@ export type Query = {
   asset?: Maybe<Asset>;
   assetCollection?: Maybe<AssetCollection>;
   assetCursorCollection?: Maybe<AssetCursorCollection>;
+  ctaLinkButton?: Maybe<CtaLinkButton>;
+  ctaLinkButtonCollection?: Maybe<CtaLinkButtonCollection>;
+  ctaLinkButtonCursorCollection?: Maybe<CtaLinkButtonCursorCollection>;
   entryCollection?: Maybe<EntryCollection>;
   entryCursorCollection?: Maybe<EntryCursorCollection>;
   heroSection?: Maybe<HeroSection>;
@@ -809,6 +1105,37 @@ export type QueryAssetCursorCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
   where?: InputMaybe<AssetFilter>;
+};
+
+
+export type QueryCtaLinkButtonArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryCtaLinkButtonCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<CtaLinkButtonOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<CtaLinkButtonFilter>;
+};
+
+
+export type QueryCtaLinkButtonCursorCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<CtaLinkButtonOrder>>>;
+  pageNext?: InputMaybe<Scalars['String']['input']>;
+  pagePrev?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<CtaLinkButtonFilter>;
 };
 
 
@@ -1160,10 +1487,43 @@ export type _Node = {
   _id: Scalars['ID']['output'];
 };
 
+export type CfCtaLinkButtonNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfCtaLinkButtonNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfCtaLinkButtonNestedFilter>>>;
+  arrow?: InputMaybe<Scalars['Boolean']['input']>;
+  arrow_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  arrow_not?: InputMaybe<Scalars['Boolean']['input']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  lable?: InputMaybe<Scalars['String']['input']>;
+  lable_contains?: InputMaybe<Scalars['String']['input']>;
+  lable_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  lable_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  lable_not?: InputMaybe<Scalars['String']['input']>;
+  lable_not_contains?: InputMaybe<Scalars['String']['input']>;
+  lable_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  link?: InputMaybe<Scalars['String']['input']>;
+  link_contains?: InputMaybe<Scalars['String']['input']>;
+  link_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  link_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  link_not?: InputMaybe<Scalars['String']['input']>;
+  link_not_contains?: InputMaybe<Scalars['String']['input']>;
+  link_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
 export type CfHeroSectionNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfHeroSectionNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfHeroSectionNestedFilter>>>;
+  bodyText?: InputMaybe<Scalars['String']['input']>;
+  bodyText_contains?: InputMaybe<Scalars['String']['input']>;
+  bodyText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  bodyText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  bodyText_not?: InputMaybe<Scalars['String']['input']>;
+  bodyText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  bodyText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  ctAsCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  image_exists?: InputMaybe<Scalars['Boolean']['input']>;
   sys?: InputMaybe<SysFilter>;
   title?: InputMaybe<Scalars['String']['input']>;
   title_contains?: InputMaybe<Scalars['String']['input']>;
